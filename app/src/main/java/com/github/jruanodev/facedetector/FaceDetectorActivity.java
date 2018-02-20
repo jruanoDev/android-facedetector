@@ -41,7 +41,9 @@ public class FaceDetectorActivity extends AppCompatActivity implements View.OnCl
     public void onClick(View view) {
         switch(view.getId()) {
             case R.id.btnChooseGallery:
-                Intent galleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                Intent galleryIntent = new Intent(Intent.ACTION_PICK,
+                        MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+
                 startActivityForResult(galleryIntent, RESULT_LOAD_IMAGE);
 
                 break;

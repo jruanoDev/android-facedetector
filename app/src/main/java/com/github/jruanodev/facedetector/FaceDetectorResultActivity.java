@@ -50,16 +50,17 @@ public class FaceDetectorResultActivity extends AppCompatActivity {
         image = BitmapFactory.decodeFile(comingIntent.getStringExtra("image"));
 
         Paint paint = new Paint();
-        paint.setStrokeWidth(10);
+        paint.setStrokeWidth(5);
         paint.setColor(Color.GREEN);
         paint.setStyle(Paint.Style.STROKE);
+        paint.setTextSize(30);
 
         Bitmap tempBitmap = Bitmap.createBitmap(image.getWidth(), image.getHeight(), Bitmap.Config.RGB_565);
         Canvas canvas = new Canvas(tempBitmap);
         canvas.drawBitmap(image, 0, 0, null);
 
         FaceDetector faceDetector = new FaceDetector.Builder(getApplicationContext())
-                .setTrackingEnabled(false)
+                .setTrackingEnabled(true)
                 .setLandmarkType(FaceDetector.ALL_LANDMARKS)
                 .setMode(FaceDetector.FAST_MODE)
                 .setClassificationType(FaceDetector.ALL_CLASSIFICATIONS)
@@ -76,9 +77,9 @@ public class FaceDetectorResultActivity extends AppCompatActivity {
                 DecimalFormat decimalFormat = new DecimalFormat("##.#");
                 float probability = Float.valueOf(decimalFormat.format(face.getIsSmilingProbability() * 100));
                 if(face.getIsSmilingProbability() == -1.0)
-                    detailsArrayList.add("Smiling probabilty of face " + (i + 1) + ": Unknown");
+                    detailsArrayList.add("Smiling probabilty of face " + (face.getId()) + ": Unknown");
                 else
-                    detailsArrayList.add("Smiling probabilty of face " + (i + 1) + ": " + probability + " %");
+                    detailsArrayList.add("Smiling probabilty of face " + (face.getId()) + ": " + probability + " %");
 
                 float x1 = face.getPosition().x;
                 float y1 = face.getPosition().y;
@@ -87,6 +88,8 @@ public class FaceDetectorResultActivity extends AppCompatActivity {
 
                 RectF rectF = new RectF(x1, y1, x2, y2);
                 canvas.drawRoundRect(rectF, 2, 2, paint);
+                canvas.drawText("" + face.getId(), rectF.centerX(), rectF.centerY(), paint);
+
             }
 
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
