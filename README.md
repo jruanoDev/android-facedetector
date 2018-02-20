@@ -13,5 +13,5 @@ the smile probabilty of each one of the faces.
 This application works on devices running Android 5.0 Lollipop and avobe.
 
 
-You can check the docs in [Google Vision API Docs](https://developers.google.com/vision/face-detection-concepts)
+You can check the docs in [Google Vision API Docs](https://developers.google.com/vision/face-detection-concepts).
 To download the APK file [click here](https://github.com/jruanoDev/Android_FaceDetector/releases/tag/v1.0)
