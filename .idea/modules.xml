@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/FaceDetector.iml" filepath="$PROJECT_DIR$/FaceDetector.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Android_FaceDetector.iml" filepath="$PROJECT_DIR$/Android_FaceDetector.iml" />
+      <module fileurl="file://C:\Users\matinal\Desktop\Android_FaceDetector\FaceDetector.iml" filepath="C:\Users\matinal\Desktop\Android_FaceDetector\FaceDetector.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\matinal\Desktop\Android_FaceDetector\app\app.iml" filepath="C:\Users\matinal\Desktop\Android_FaceDetector\app\app.iml" />
     </modules>
   </component>
 </project>
